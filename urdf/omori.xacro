@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
-<robot name="box" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="omori" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<link name="box">
+<link name="omori">
     <visual>
         <origin xyz="0 0 3" rpy="0 0 0"/>
       <geometry>
-        <box size="1 1 1"/>
+        <mesh filename="package://quarter_test/models/omori.dae"/>
       </geometry>
     </visual>
 
-    <collision name="box">
+    <collision name="omori">
         <origin xyz="0 0 3" rpy="0 0 0"/>
       <geometry>
-        <box size="1 1 1"/>
+        <mesh filename="package://quarter_test/models/omori.dae"/>
       </geometry>
     </collision>
 
     <inertial>
         <origin xyz="0 0 3" rpy="0 0 0"/>
-        <mass value="1"/>
-        <inertia ixx="0.083"  ixy="0"  ixz="0" iyy="0.083" iyz="0" izz="0.083"/>
+        <mass value="79.56"/>
+        <inertia ixx="11.43"  ixy="0"  ixz="0" iyy="11.43" iyz="0" izz="21.09"/>
     </inertial>
 </link> 
 
-<gazebo reference="box">
+<gazebo reference="omori">
     <mu1 value="200" />
     <mu2 value="100" />
     <selfCollide>true</selfCollide>
