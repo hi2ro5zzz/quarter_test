@@ -9,6 +9,7 @@ project(quarter_test)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   gazebo_msgs
+  geometry_msgs
   roscpp
 )
 
@@ -133,6 +134,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/quarter_test_node.cpp)
+add_executable(cal src/cal.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -148,6 +150,7 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+target_link_libraries(cal ${catkin_LIBRARIES})
 
 #############
 ## Install ##
